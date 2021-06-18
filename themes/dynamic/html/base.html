@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{{title}}{% block subtitle %}{% endblock %}</title>
+        {% block meta %}
+        <meta name="description" content="{{description}}">
+        <meta name="keywords" content="">
+        {% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="canonical" href="{{site-url}}{{uri}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/heartbeat.png">
+
+        <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="/sass/bulma.css">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+        {% style "css/screen.css" %}
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <div class="hero">
+            <div class="hear-head">
+                <nav class="navbar" role="navigation" aria-label="main navigation">
+                    <div class="container">
+                        <div class="navbar-brand">
+                            <a class="navbar-item" href="{{index-uri}}">
+                                <img src="/img/dynasty.png" alt="Logo">
+                            </a>
+                            <a role="button" class="navbar-burger" aria-label="menu"
+                               aria-expanded="false" data-target="navbarMenu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </a>
+                        </div>
+                        <div id="navbarMenu" class="navbar-menu">
+                            <div class="navbar-end">
+                                <div class="tabs is-right">
+                                    <ul>
+                                        <li {% if home %} class="is-active" {% endif %}>
+                                            <a class="navbar-item" href="{{index-uri}}">Home</a>
+                                        </li>
+                                        {% for nav-page in navbar-pages %}
+                                        <li {% ifequal page.uri nav-page.uri %} class="is-active" {% endifequal %}>
+                                            <a class="navbar-item" href="{{nav-page.uri}}">{{nav-page.title}}</a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Slider -->
+        <section class="container">
+            {% if home %}
+            <div class="content">
+                <div class="slider">
+				            <div class="slider-content">
+					              <img class="image slider-img" src="/img/dynasty1.jpg" alt="">
+				            </div>
+				            <div class="slider-content">
+					              <img class="image slider-img" src="/img/dynasty2.jpg" alt="">
+				            </div>
+				            <div class="slider-content">
+					              <img class="image slider-img" src="/img/dynasty3.jpg" alt="">
+				            </div>
+                    <div class="slider-content">
+                        <img class="image slider-img" src="/img/dynasty4.JPG" alt="">
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </section>
+
+        <!-- Content -->
+        <section class="container">
+            <div class="content main-content" id="content">
+                {% if home %}
+                <!-- Cards; services offered, network of expertise, business model -->
+                <div class="article">
+                    <div class="columns features">
+                        <div class="column is-4">
+                            <div class="card is-shady">
+                                <div class="card-image has-text-centered">
+                                    <i class="fa fa-stethoscope"></i>
+                                </div>
+                                <div class="card-content">
+                                    <div class="content has-text-centered">
+                                        <h4>Services Offered</h4>
+                                        <p>
+                                            &emsp;&emsp;Explore our wide range of health services.&emsp;&emsp;
+                                        </p>
+                                        <p><a href="#services">Learn more</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-4">
+                            <div class="card is-shady">
+                                <div class="card-image has-text-centered">
+                                    <i class="fa fa-hospital-user"></i>
+                                </div>
+                                <div class="card-content">
+                                    <div class="content has-text-centered">
+                                        <h4>Network of Expertise</h4>
+                                        <p>
+                                            &emsp;Find out more about our Network of Expertise.&emsp;
+                                        </p>
+                                        <p><a href="#network-of-expertise">Learn more</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-4">
+                            <div class="card is-shady">
+                                <div class="card-image has-text-centered">
+                                    <i class="fa fa-file-medical-alt"></i>
+                                </div>
+                                <div class="card-content">
+                                    <div class="content has-text-centered">
+                                        <h4>Business Model</h4>
+                                        <p>
+                                            &emsp;&emsp;&emsp;Get to grips with our business model.&emsp;&emsp;&emsp;
+                                        </p>
+                                        <p><a href="#business-model">Learn more</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Us; Introduction -->
+                <div class="section-light about-us" id="about-us">
+                    <div class="container">
+                        <div class="column is-12 about-me">
+                            <h1 class="title has-text-centered section-title">About Us</h1>
+                        </div>
+                        <div class="columns is-multiline">
+                            <div class="column is-6 has-vertically-aligned-content" data-aos="fade-right">
+                                <h4 class="title about-title">
+                                    &emsp;&emsp;<strong>
+                                    Dynasty Healthcare
+                                    </strong>
+                                </h4>
+                                <br />
+                                <p>
+                                    Dynasty HealthCare was established in 2015 as a multi-disciplinary
+                                    entity offering the following consulting services and health risk
+                                    management services for private and public service clients.
+                                </p>
+                                <br />
+                                <div class="is-divider"></div>
+                                <div class="columns about-links">
+                                    <div class="column">
+                                        <p class="heading">
+                                            <strong>Call us:</strong>
+                                        </p>
+                                        <p class="subheading">
+                                            +27 64 869 5763
+                                        </p>
+                                    </div>
+                                    <div class="column">
+                                        <p class="heading">
+                                            <strong>Whatsapp us:</strong>
+                                        </p>
+                                        <p class="subheading">
+                                            +27 61 526 9394
+                                        </p>
+                                    </div>
+                                    <div class="column">
+                                        <p class="heading">
+                                            <strong>Email us:</strong>
+                                        </p>
+                                        <p class="subheading">
+                                            <a href="mailto:benny@dynastyhealth.co.za">
+                                                benny@dynastyhealth.co.za
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column is-6 right-image " data-aos="fade-left">
+                                <img class="is-rounded" src="/img/stethoscope.jpg" alt="image of doctor" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services; title of services -->
+                <div class="section-light services" id="services">
+                    <div class="container">
+                        <div class="columns is-multiline">
+                            <div class="column is-12 about-us" data-aos="fade-in" data-aos-easing="linear">
+                                <h1 class="title has-text-centered section-title">Services</h1>
+                                <p class="subtitle has-text-centered">
+                                    These services are offered through an integrated network of contracted health
+                                    professionals to address the immediate needs and assessments of clients for
+                                    various defined purposes.
+                                </p>
+                                <br />
+                            </div>
+                            <div class="columns is-12">
+                                <div class="column is-3 has-text-centered" data-aos="fade-in" data-aos-easing="linear">
+                                    <i class="fa fa-capsules fa-3x"></i>
+                                    <hr />
+                                    <h2 class="title service-title">
+                                        Allopathic Medicine
+                                    </h2>
+                                </div>
+                                <div class="column is-3 has-text-centered" data-aos="fade-in" data-aos-easing="linear">
+                                    <i class="fa fa-capsules fa-3x"></i>
+                                    <hr />
+                                    <h2 class="title service-title">
+                                        Regenerative Medicine
+                                    </h2>
+                                </div>
+                                <div class="column is-3 has-text-centered" data-aos="fade-in" data-aos-easing="linear">
+                                    <i class="fa fa-capsules fa-3x"></i>
+                                    <hr />
+                                    <h2 class="title service-title">
+                                        Integrative Medicine
+                                    </h2>
+                                </div>
+                                <div class="column is-3 has-text-centered" data-aos="fade-in" data-aos-easing="linear">
+                                    <i class="fa fa-user-md fa-3x"></i>
+                                    <hr />
+                                    <h2 class="title service-title">
+                                        Concierge Medical Services
+                                    </h2>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="columns is-12">
+                                <div class="column is-4 has-text-centered" data-aos="fade-in" data-aos-easing="linear">
+                                    <i class="fa fa-user-md fa-3x"></i>
+                                    <hr />
+                                    <h2 class="title service-title">
+                                        Occupational and Rehabilitative Medical Services
+                                    </h2>
+                                </div>
+                                <div class="column is-4 has-text-centered" data-aos="fade-in" data-aos-easing="linear">
+                                    <i class="fa fa-user-md fa-3x"></i>
+                                    <hr />
+                                    <h2 class="title service-title">
+                                        Health Systems Governance and Accountability Services
+                                    </h2>
+                                </div>
+                                <div class="column is-4 has-text-centered" data-aos="fade-in" data-aos-easing="linear">
+                                    <i class="fa fa-laptop-medical fa-3x"></i>
+                                    <hr />
+                                    <h2 class="title service-title">
+                                        Medical Transcription and Translation services
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Network of expertise -->
+                <div class="section-light network-of-expertise" id="network-of-expertise">
+                    <div class="container">
+                        <div class="column is-12 network-of-expertise">
+                            <h1 class="title has-text-centered section-title">Network of Expertise</h1>
+                        </div>
+                        <div class="columns is-multiline">
+                            <div class="column is-6 left-image " data-aos="fade-left">
+                                <img class="is-rounded" src="/img/medical.jpg" alt="" />
+                            </div>
+                            <div class="column is-6 has-vertically-aligned-content" data-aos="fade-down">
+                                <h4 class="title network-title">
+                                    <strong> Our Network </strong>
+                                </h4>
+                                <p>
+                                    Dynasty HealthCare offers its services through a network of general and specialist
+                                    healthcare services professionals to offer a one-stop service portal for on-time and
+                                    objective consultations and recommendations of solutions to provide quality and value
+                                    proposition to clients through its network of healthshops and family health clinics.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Business Model -->
+                <div class="section-light business-model" id="business-model">
+                    <div class="container">
+                        <div class="column is-12 business-model">
+                            <h1 class="title has-text-centered section-title">Business Model</h1>
+                        </div>
+                        <div class="columns is-multiline">
+                            <div class="column has-text-centered has-vertically-aligned-content" data-aos="fade-down">
+                                <p>
+                                    Acquire or establish a new or existing practice
+                                </p>
+                                <p>
+                                    Refurbish and modernize the premises- healthshops and family health centres.
+                                </p>
+                                <p>
+                                    Install medical practice and patient management software
+                                </p>
+                                <p>
+                                    Install telemedicine functionality
+                                </p>
+                                <p>
+                                    Establish the service packages to be offered
+                                </p>
+                                <p>
+                                    Establish rules and regulations for operating the practices.
+                                </p>
+                                <p>
+                                    Management medicine supplies and logistics
+                                </p>
+                                <p>
+                                    Perform monitoring and evaluation
+                                </p>
+                                <p>
+                                    Ensure compliance reporting for performance and finances
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                <!-- Pages -->
+                <div class="section-light pages">
+                    <div class="container">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container"
+                <div class="content has-text-centered">
+                    <div class="columns">
+                        <div class="column is-4">
+                            <img src="/img/dynasty.png">
+                        </div>
+                        <div class="column is-2">
+                            <h4 class="title is-4"><strong>Address</strong></h4>
+                            <i class="fa fa-map-marker-alt"></i>
+                            49 Hill Str<br />
+                            Hillpark<br />
+                            Building Unit 4<br />
+                            Kroonstad CBD<br />
+                            9499
+                        </div>
+                        <div class="column is-2">
+                            <h4 class="title is-4"><strong>Phone/Fax</strong></h4>
+                            <i class="fa fa-phone"></i>
+                            +27 64 869 5763<br>
+                            <i class="fab fa-whatsapp"></i>
+                            +27 61 526 9394
+                        </div>
+                        <div class="column is-4">
+                            <h4 class="title is-4"><strong>Email</strong></h4>
+                            <i class="fa fa-envelope"></i>
+                            benny@dynastyhealth.co.za
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+		    <script type="module">
+         var slider = tns({
+             container: '.slider',
+             items: 1,
+             gutter: 15,
+             nav: false,
+             speed: 300,
+             autoplay: true,
+             autoplayButtonOutput: false,
+             controls: false,
+             autoplayHoverPause: true
+         });
+        </script>
+        <script>
+         AOS.init({
+             easing: "ease-out",
+             duration: 800,
+         });
+        </script>
+        {% script "js/highlight.pack.js" %}
+        <script>
+         hljs.initHighlightingOnLoad();
+        </script>
+        {% if post.klipse %} {{post.klipse|safe}} {% endif %}
+        {% if page.klipse %} {{page.klipse|safe}} {% endif %}
+    </body>
+</html>

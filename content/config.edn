@@ -18,7 +18,7 @@
  :sass-src                     ["sass"]
  :sass-path                    "sass"
  :theme                        "dynamic"
- :resources                    ["img" "sass"]
+ :resources                    ["img" "sass" "CNAME"]
  :keep-files                   [".git"]
  :disqus?                      false
  :disqus-shortname             ""

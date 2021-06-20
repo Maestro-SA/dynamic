@@ -1,5 +1,5 @@
 html,body {
-  background: hsl(0, 0%, 99%) !important;
+    background: hsl(0, 0%, 99%) !important;
   font-family: 'Poppins', Lato, Tahoma, sans-serif;
   font-size: 18px;
   font-weight: 300;
@@ -7,18 +7,20 @@ html,body {
 }
 nav.navbar {
     height: 3rem !important;
+    background-color: #fff !important;
 }
 .tabs a {
     align-items: center;
-    border-bottom-color: #fff;
-    color: #4a4a4a;
+    color: hsl(0, 100%, 0%);
     display: flex;
     justify-content: center;
     margin-bottom: -1px;
-    padding: 0.5em 1em;
+    padding: 1em 1.5em;
     vertical-align: top;
+    font-size: 1rem;
 }
 .slider-content {
+    padding-top: 0.5rem;
     position: relative;
     text-align: center;
     color: #fff;

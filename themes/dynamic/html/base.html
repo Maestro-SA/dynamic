@@ -11,15 +11,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="canonical" href="{{site-url}}{{uri}}">
         <link rel="icon" type="image/png" sizes="32x32" href="/img/heartbeat.png">
-
         <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="/sass/bulma.css">
+        <link rel="stylesheet" href="{{'/sass/bulma.css' | relative_url}}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" href="https://unpkg.com/bulma-modal-fx/dist/css/modal-fx.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
-        <base href="https://maestro-sa.github.io/dynastyhealth/">
         {% style "css/screen.css" %}
     </head>
 
@@ -30,7 +29,7 @@
                 <nav class="navbar" role="navigation" aria-label="main navigation">
                     <div class="container">
                         <div class="navbar-brand">
-                            <a class="navbar-item" href="{{index-uri}}">
+                            <a class="navbar-item" href="{{index-uri | relative_url}}">
                                 <img src="/img/dynasty.png" alt="Logo">
                             </a>
                             <a role="button" class="navbar-burger" aria-label="menu"
@@ -45,11 +44,11 @@
                                 <div class="tabs is-right">
                                     <ul>
                                         <li {% if home %} class="is-active" {% endif %}>
-                                            <a class="navbar-item" href="{{index-uri}}">Home</a>
+                                            <a class="navbar-item" href="{{index-uri | relative_url}}">Home</a>
                                         </li>
                                         {% for nav-page in navbar-pages %}
                                         <li {% ifequal page.uri nav-page.uri %} class="is-active" {% endifequal %}>
-                                            <a class="navbar-item" href="{{nav-page.uri}}">{{nav-page.title}}</a>
+                                            <a class="navbar-item" href="{{nav-page.uri | relative_url}}">{{nav-page.title}}</a>
                                         </li>
                                         {% endfor %}
                                     </ul>

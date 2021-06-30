@@ -39,28 +39,11 @@ nav.navbar {
     color: #fff;
 }
 @media screen and (min-width: 768px) {
-    .slider-content span::before {
-        position: absolute;
-        top: 65%;
-        left: 70%;
-        transform: translate(-50%, -50%);
-        -webkit-filter: blur(12px);
-        filter: blur(12px);
-    }
     .slider-content span {
         position: absolute;
         top: 60%;
         left: 65%;
         transform: translate(-50%, -50%);
-    }
-    .content-title::before {
-        color: hsl(0, 100%, 35%) !important;
-        letter-spacing: -1px;
-        border-radius: 35px;
-        background: hsl(260, 100%, 15%);
-        background: hsla(260, 100%, 15%, 0.125);
-        -webkit-filter: blur(12px);
-        filter: blur(12px);
     }
     .content-title {
         color: hsl(0, 100%, 35%) !important;
@@ -69,6 +52,11 @@ nav.navbar {
         background: hsl(260, 100%, 15%);
         background: hsla(260, 100%, 15%, 0.125);
     }
+    .main-content {
+        padding: 2rem 4rem;
+        color: #4a4a4a;
+    }
+    
 }
 .block-title {
     color: hsl(0, 100%, 35%) !important;
@@ -79,9 +67,8 @@ nav.navbar {
     color: hsl(260, 100%, 15%) !important;
     letter-spacing: -1px;
 }
-.main-content {
-    padding: 2rem 4rem;
-    color: #4a4a4a;
+.main-content .section-light {
+    padding: 2rem;
 }
 .main-content .content-img {
     border-radius: 360px;
@@ -126,9 +113,6 @@ nav.navbar {
     padding: 100px;
     color: #fff;
 }
-.main-content .section-light {
-    padding: 2rem;
-}
 .main-content .section-title {
     color: hsl(245, 100%, 10%);
     letter-spacing: 1px;
@@ -147,7 +131,6 @@ nav.navbar {
     color: hsl(0, 100%, 35%);
     text-align: center;
     letter-spacing: -1px;
-    padding: 1rem;
 }
 .main-content .business-title {
     color: hsl(0, 100%, 35%);

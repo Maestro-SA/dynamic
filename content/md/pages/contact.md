@@ -20,7 +20,7 @@
                     <h2 class="title service-title">Phone/Fax</h2>
                     <h4 class="title service-title">Practice Manager</h4>
                     <p>
-                        Kenny Thamae: +27 64 869 5763 /
+                        Kenny Thamae: +27 65 869 5763 /
                         <a href="mailto:kenny@tgmg.co.za">kenny@tgmg.co.za</a>
                     </p>
                     <h4 class="title service-title">Provder</h4>
